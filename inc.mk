@@ -1,0 +1,3 @@
+
+SYSTYPE := $(shell uname)
+
