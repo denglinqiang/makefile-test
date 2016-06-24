@@ -25,7 +25,7 @@ ifneq ($(findstring CYGWIN, $(SYSTYPE)),)
     $(warning > setting SRCROOT to $(SRCROOT))
   endif
 endif
-$(warning $(SRCROOT))
+
 #
 # We need to know the location of the sketchbook.  If it hasn't been overridden,
 # try the parent of the current directory.  If there is no libraries directory
@@ -43,6 +43,7 @@ ifeq ($(SKETCHBOOK),)
   ifeq ($(wildcard $(SKETCHBOOK)/libraries),)
     SKETCHBOOK		:=	$(shell cd $(SRCROOT)/../../../.. && pwd)
   endif
+  $(warning $(SKETCHBOOK))
   ifeq ($(wildcard $(SKETCHBOOK)/libraries),)
     $(error ERROR: cannot determine sketchbook location - please specify on the commandline with SKETCHBOOK=<path>)
   endif
