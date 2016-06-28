@@ -17,7 +17,19 @@ else
   MK_DIR := $(patsubst %/,%,$(dir $(lastword $(MAKEFILE_LIST))))
 endif
 include $(MK_DIR)/environ.mk	
-all:
+$(info Reading $(LANG))
+$(info Reading $(SYSTYPE))
+$(info Reading $(GIT_VERSION))
+$(info Reading $(EXTRAFLAGS))
+$(info Reading $(SRCROOT))
+$(info Reading $(SKETCHBOOK))
+$(info Reading $(SKETCH))
+$(info Reading $(BUILDROOT))
+$(info Reading $(MAKECMDGOALS))
+$(info Reading $(APPDIR))
+$(info Reading $(HAL_BOARD))
+$(info Reading $(HAL_BOARD_SUBTYPE))
+px4-v2:
 	@echo name1 = $(name1)
 	@echo name2 = $(name2)
 	@echo name3 = $(name3)

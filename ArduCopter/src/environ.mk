@@ -43,7 +43,6 @@ ifeq ($(SKETCHBOOK),)
   ifeq ($(wildcard $(SKETCHBOOK)/libraries),)
     SKETCHBOOK		:=	$(shell cd $(SRCROOT)/../../../.. && pwd)
   endif
-  $(warning $(SKETCHBOOK)-$(SRCROOT))
   ifeq ($(wildcard $(SKETCHBOOK)/libraries),)
     $(error ERROR: cannot determine sketchbook location - please specify on the commandline with SKETCHBOOK=<path>)
   endif
@@ -87,7 +86,6 @@ ifneq ($(findstring px4, $(MAKECMDGOALS)),)
 # as the NuttX build system relies on it
 BUILDROOT		:=	$(SKETCHBOOK)/Build.$(SKETCH)
 endif
-
 ifneq ($(findstring vrbrain, $(MAKECMDGOALS)),)
 # when building vrbrain we need all sources to be inside the sketchbook directory
 # as the NuttX build system relies on it
